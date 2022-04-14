@@ -64,9 +64,9 @@ def start(message):
         markup = telebot.types.InlineKeyboardMarkup()
         markup.add(telebot.types.InlineKeyboardButton(
            text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍾 To Use This Bot You Need To Join This Channel - "
+        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - "
         for i in CHANNELS:
-            msg_start += f"\n\n➡️ {i}\n\n"
+            msg_start += f"\n\n➡️ {i}\n"
         msg_start += "*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markup)
