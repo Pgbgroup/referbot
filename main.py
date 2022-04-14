@@ -64,9 +64,9 @@ def start(message):
         markup = telebot.types.InlineKeyboardMarkup()
         markup.add(telebot.types.InlineKeyboardButton(
            text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*⚽️ After Joining All Channels Click On Joined To Verify - "
+        msg_start = "*🍾 To Use This Bot You Need To Join This Channel - "
         for i in CHANNELS:
-            msg_start += f"\n➡️ {i}\n"
+            msg_start += f"\n\n➡️ {i}\n\n"
         msg_start += "*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markup)
@@ -98,7 +98,7 @@ def start(message):
         markups = telebot.types.InlineKeyboardMarkup()
         markups.add(telebot.types.InlineKeyboardButton(
             text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @Pgbgroup\n➡️ @Referearnpgb*"
+        msg_start = "*🍾 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n\n➡️ @Referearnpgb*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
    except:
@@ -116,7 +116,7 @@ def query_handler(call):
             user_id = call.message.chat.id
             user = str(user_id)
             bot.answer_callback_query(
-                callback_query_id=call.id, text='✅ You joined Now you can earn money')
+                callback_query_id=call.id, text='✅ You joined Now You can earn money')
             bot.delete_message(call.message.chat.id, call.message.message_id)
             if user not in data['refer']:
                 data['refer'][user] = True
@@ -154,7 +154,7 @@ def query_handler(call):
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
                 text='🤼‍♂️ Joined', callback_data='check'))
-            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @Pgbgroup\n➡️ @Referearnpgb*"
+            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n\n➡️ @Referearnpgb*"
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
    except:
@@ -327,6 +327,9 @@ def amo_with(message):
     markupp.add(telebot.types.InlineKeyboardButton(text='🍀 BOT LINK', url=f'https://telegram.me/{bot_name}?start={OWNER_ID}'))
 
     send = bot.send_message(OWNER_ID,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"+data['wallet'][user]+"`\n☎️ *User Referrals = "+str(
+        data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n⏩ Please wait our owner will confrim it*", parse_mode="Markdown", disable_web_page_preview=True, reply_markup=markupp)
+        
+        bot.send_message(PAYMENT_CHANNEL,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"+data['wallet'][user]+"`\n☎️ *User Referrals = "+str(
         data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n⏩ Please wait our owner will confrim it*", parse_mode="Markdown", disable_web_page_preview=True, reply_markup=markupp)
    except:
         bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
