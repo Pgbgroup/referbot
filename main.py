@@ -30,7 +30,7 @@ def menu(id):
     keyboard = telebot.types.ReplyKeyboardMarkup(True)
     keyboard.row('🆔 Account')
     keyboard.row('🙌🏻 Referrals', '🎁 Bonus', '💸 Withdraw')
-    keyboard.row('⚙️ Set Wallet', '📊Statistics')
+    keyboard.row('⚙️ Set Wallet', '📊 Statistics')
     bot.send_message(id, "*🏡 Home*", parse_mode="Markdown",
                      reply_markup=keyboard)
 
@@ -227,7 +227,7 @@ def send_text(message):
                 message.chat.id, "❌ *You can only take bonus once every 24 hours!*",parse_mode="markdown")
         return
 
-    if message.text == "📊Statistics":
+    if message.text == "📊 Statistics":
         user_id = message.chat.id
         user = str(user_id)
         data = json.load(open('users.json', 'r'))
@@ -276,7 +276,7 @@ def trx_address(message):
         data = json.load(open('users.json', 'r'))
         data['wallet'][user] = message.text
 
-        bot.send_message(message.chat.id, "*💹 Your Paytm wallet set to " +
+        bot.send_message(message.chat.id, "*✅ Your Paytm wallet set to " +
                          data['wallet'][user]+"*", parse_mode="Markdown")
         json.dump(data, open('users.json', 'w'))
         return menu(message.chat.id)
