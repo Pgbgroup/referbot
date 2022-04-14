@@ -10,7 +10,7 @@ PAYMENT_CHANNEL = "@paymentproofpgb" #add payment channel here including the '@'
 OWNER_ID = 1629550450 #write owner's user id here.. get it from @MissRose_Bot by /id
 CHANNELS = ["@Pgbgroup","@Referearnpgb"] #add channels to be checked here in the format - ["Channel 1", "Channel 2"] 
               #you can add as many channels here and also add the '@' sign before channel username
-Daily_bonus = 0.9 #Put daily bonus amount here!
+Daily_bonus = 10 #Put daily bonus amount here!
 Mini_Withdraw = 0.5  #remove 0 and add the minimum withdraw u want to set
 Per_Refer = 1 #add per refer bonus here
 
