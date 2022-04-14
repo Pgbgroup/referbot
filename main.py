@@ -149,12 +149,12 @@ def query_handler(call):
 
         else:
             bot.answer_callback_query(
-                callback_query_id=call.id, text='❌ You not Joined')
+                callback_query_id=call.id, text='❌ Not Joined')
             bot.delete_message(call.message.chat.id, call.message.message_id)
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
                 text='🤼‍♂️ Joined', callback_data='check'))
-            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n\n➡️ @Referearnpgb*"
+            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n➡️ @Referearnpgb*"
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
    except:
