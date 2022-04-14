@@ -5,13 +5,13 @@ import telebot
 ##TOKEN DETAILS
 TOKEN = "Rs"
 
-BOT_TOKEN = "5236419481:AAF_9sZrZsiEj-lO2YwZs1KfNZISyKKG9g4"
+BOT_TOKEN = "5236419481:AAFekSL6Z8B5Z3SUd29H4m-JYb4ueKUbKDM"
 PAYMENT_CHANNEL = "@paymentproofpgb" #add payment channel here including the '@' sign
 OWNER_ID = 1629550450 #write owner's user id here.. get it from @MissRose_Bot by /id
-CHANNELS = ["@Pgbgroup"] #add channels to be checked here in the format - ["Channel 1", "Channel 2"] 
+CHANNELS = ["@Pgbgroup","@Referearnpgb"] #add channels to be checked here in the format - ["Channel 1", "Channel 2"] 
               #you can add as many channels here and also add the '@' sign before channel username
-Daily_bonus = 0.01 #Put daily bonus amount here!
-Mini_Withdraw = 50  #remove 0 and add the minimum withdraw u want to set
+Daily_bonus = 0.9 #Put daily bonus amount here!
+Mini_Withdraw = 0.5  #remove 0 and add the minimum withdraw u want to set
 Per_Refer = 1 #add per refer bonus here
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -64,7 +64,7 @@ def start(message):
         markup = telebot.types.InlineKeyboardMarkup()
         markup.add(telebot.types.InlineKeyboardButton(
            text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - "
+        msg_start = "*⚽️ After Joining All Channels Click On "Joined" To Verify - "
         for i in CHANNELS:
             msg_start += f"\n➡️ {i}\n"
         msg_start += "*"
@@ -98,7 +98,7 @@ def start(message):
         markups = telebot.types.InlineKeyboardMarkup()
         markups.add(telebot.types.InlineKeyboardButton(
             text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @Pgbgroup\n➡️ @pgbearnpaytm\n➡️@paymentproofpgb"
+        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @Pgbgroup\n➡️ @Referearnpgb*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
    except:
@@ -154,7 +154,7 @@ def query_handler(call):
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
                 text='🤼‍♂️ Joined', callback_data='check'))
-            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @Pgbgroup\n➡️ @pgbearnpaytm\n➡️@paymentproofpgb"
+            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @Pgbgroup\n➡️ @Referearnpgb*"
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
    except:
@@ -206,7 +206,7 @@ def send_text(message):
 
         keyboard = telebot.types.ReplyKeyboardMarkup(True)
         keyboard.row('🚫 Cancel')
-        send = bot.send_message(message.chat.id, "_⚠️ Send your Paytm Wallet Address._",
+        send = bot.send_message(message.chat.id, "_⚠️ Send your Paytm Wallet Number._",
                                 parse_mode="Markdown", reply_markup=keyboard)
         # Next message will call the name_handler function
         bot.register_next_step_handler(message, trx_address)
@@ -327,8 +327,6 @@ def amo_with(message):
     markupp.add(telebot.types.InlineKeyboardButton(text='🍀 BOT LINK', url=f'https://telegram.me/{bot_name}?start={OWNER_ID}'))
 
     send = bot.send_message(OWNER_ID,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"+data['wallet'][user]+"`\n☎️ *User Referrals = "+str(
-        data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n⏩ Please wait our owner will confrim it*", parse_mode="Markdown", disable_web_page_preview=True, reply_markup=markupp)
-        send = bot.send_message( PAYMENT_CHANNEL,"✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n☎️ *User Referrals = "+str(
         data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n⏩ Please wait our owner will confrim it*", parse_mode="Markdown", disable_web_page_preview=True, reply_markup=markupp)
    except:
         bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
