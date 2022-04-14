@@ -66,7 +66,7 @@ def start(message):
            text='🤼‍♂️ Joined', callback_data='check'))
         msg_start = "*🍔 To Use This Bot You Need To Join This Channel - "
         for i in CHANNELS:
-            msg_start += f"\n\n➡️ {i}\n"
+            msg_start += f"\n➡️ {i}\n"
         msg_start += "*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markup)
@@ -154,7 +154,7 @@ def query_handler(call):
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
                 text='🤼‍♂️ Joined', callback_data='check'))
-            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n➡️ @Referearnpgb*"
+            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n\n➡️ @Referearnpgb*"
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
    except:
