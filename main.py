@@ -3,7 +3,7 @@ import json
 import telebot
 
 ##TOKEN DETAILS
-TOKEN = "Rs"
+TOKEN = "₹"
 
 BOT_TOKEN = "5236419481:AAFekSL6Z8B5Z3SUd29H4m-JYb4ueKUbKDM"
 PAYMENT_CHANNEL = "@paymentproofpgb" #add payment channel here including the '@' sign
