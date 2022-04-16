@@ -7,6 +7,7 @@ TOKEN = "₹"
 
 BOT_TOKEN = "5236419481:AAFekSL6Z8B5Z3SUd29H4m-JYb4ueKUbKDM"
 PAYMENT_CHANNEL = "@paymentproofpgb" #add payment channel here including the '@' sign
+WITHDRAW_CHANNEL ="@paymentproofpgb"
 OWNER_ID = 1629550450 #write owner's user id here.. get it from @MissRose_Bot by /id
 CHANNELS = ["@Pgbgroup","@Referearnpgb"] #add channels to be checked here in the format - ["Channel 1", "Channel 2"] 
               #you can add as many channels here and also add the '@' sign before channel username
@@ -322,7 +323,9 @@ def amo_with(message):
     bot_name = bot.get_me().username
     json.dump(data, open('users.json', 'w'))
     bot.send_message(user_id, "✅* Withdraw is request to our owner automatically\n\n💹 Payment Channel :- "+PAYMENT_CHANNEL +"*", parse_mode="Markdown")
-    bot.send_message(PAYMENT_CHANNEL,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"+data['wallet'][user]+"`\n☎️ *User Referrals = "+str(
+    bot.send_message(PAYMENT_CHANNEL,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"**********"`\n☎️ *User Referrals = "+str(
+        data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n #UsersRequest*", parse_mode="Markdown")
+    bot.send_message(WITHDRAW_CHANNEL,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"+data['wallet'][user]+"`\n☎️ *User Referrals = "+str(
         data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n #UsersRequest*", parse_mode="Markdown")
     
       
