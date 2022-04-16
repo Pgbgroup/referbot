@@ -99,7 +99,7 @@ def start(message):
         markups = telebot.types.InlineKeyboardMarkup()
         markups.add(telebot.types.InlineKeyboardButton(
             text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍾 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n\n➡️ @Referearnpgb*"
+        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n\n➡️ @Pgbgroup\n\n➡️ @Referearnpgb*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
    except:
