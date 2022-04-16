@@ -117,7 +117,7 @@ def query_handler(call):
             user_id = call.message.chat.id
             user = str(user_id)
             bot.answer_callback_query(
-                callback_query_id=call.id, text='✅ You joined Now You can earn money')
+                callback_query_id=call.id, text='✅ You Joined')
             bot.delete_message(call.message.chat.id, call.message.message_id)
             if user not in data['refer']:
                 data['refer'][user] = True
@@ -136,7 +136,7 @@ def query_handler(call):
                     data['balance'][ref] += Per_Refer
                     data['referred'][ref] += 1
                     bot.send_message(
-                        ref_id, f"*🏧 New Referral on Level 1, You Got : +{Per_Refer} {TOKEN}*", parse_mode="Markdown")
+                        ref_id, f"*🏧 New Referral, You Got : +{Per_Refer} {TOKEN}*", parse_mode="Markdown")
                     json.dump(data, open('users.json', 'w'))
                     return menu(call.message.chat.id)
 
@@ -186,7 +186,7 @@ def send_text(message):
         bot.send_message(message.chat.id, msg, parse_mode="Markdown")
     if message.text == '🙌🏻 Referrals':
         data = json.load(open('users.json', 'r'))
-        ref_msg = "*⏯️ Total Invites : {} Users\n\n👥 Refferrals System\n\n1 Level:\n🥇 Level°1 - {} {}\n\n🔗 Referral Link ⬇️\n{}*"
+        ref_msg = "*⏯️ Total Invites : {} Users\n\n🎉 You Will Receive - {} {} Rs For Each Successfull Referral \n\n🔗 Referral Link ⬇️\n{}*"
 
         bot_name = bot.get_me().username
         user_id = message.chat.id
@@ -322,7 +322,7 @@ def amo_with(message):
     data['totalwith'] += int(amo)
     bot_name = bot.get_me().username
     json.dump(data, open('users.json', 'w'))
-    bot.send_message(user_id, "✅* Withdraw is request to our owner automatically\n\n💹 Payment Channel :- "+PAYMENT_CHANNEL +"*", parse_mode="Markdown")
+    bot.send_message(user_id, "✅* Withdraw is request to our owner automatically\n\n💹 Payment Proof Channel :- "+PAYMENT_CHANNEL +"*", parse_mode="Markdown")
     bot.send_message(WITHDRAW_CHANNEL,  "✅* New Withdraw\n\n⭐ Amount - "+str(amo)+f" {TOKEN}\n🦁 User - @"+message.from_user.username+"\n💠 Wallet* - `"+data['wallet'][user]+"`\n☎️ *User Referrals = "+str(
         data['referred'][user])+"\n\n🏖 Bot Link - @"+bot_name+"\n #UsersRequest*", parse_mode="Markdown")
     
