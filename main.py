@@ -102,7 +102,7 @@ def start(message):
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
    except:
-        bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
+        bot.send_message(message.chat.id, "🤒 Internal Sever Error")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
 
@@ -158,7 +158,7 @@ def query_handler(call):
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
    except:
-        bot.send_message(call.message.chat.id, "This command having error pls wait for ficing the glitch by admin")
+        bot.send_message(call.message.chat.id, "🤒 Internal Sever Error")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+call.data)
         return
 
@@ -262,7 +262,7 @@ def send_text(message):
                 user_id, f"_❌ Your balance low you should have at least {Mini_Withdraw} {TOKEN} to Withdraw_", parse_mode="Markdown")
             return
    except:
-        bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
+        bot.send_message(message.chat.id, "🤒 Internal Sever Error")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
 
@@ -285,7 +285,7 @@ def trx_address(message):
             message.chat.id, "*⚠️ It's Not a Valid Paytm Number!*", parse_mode="Markdown")
         return menu(message.chat.id)
    except:
-        bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
+        bot.send_message(message.chat.id, "🤒 Internal Sever Error")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
 
@@ -327,7 +327,7 @@ def amo_with(message):
     
       
    except:
-        bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
+        bot.send_message(message.chat.id, "🤒 Internal Sever Error")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
 
