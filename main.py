@@ -167,7 +167,7 @@ def send_text(message):
    try:
     if message.text == '🆔 Account':
         data = json.load(open('users.json', 'r'))
-        accmsg = '*👮 User : {}\n\n⚙️ Wallet : *`{}`*\n\n💸 Balance : *`{}`* {}*'
+        accmsg = '*👮 User : {}\n\n📱 Paytm Number : *`{}`*\n\n💸 Balance : *`{}`* {}\n\n🎉 Refer More And Earn More*'
         user_id = message.chat.id
         user = str(user_id)
 
