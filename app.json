@@ -1,0 +1,34 @@
+{
+    "name": "Scraper Bot",
+    "description": "Made By Pgbgroup",
+    "keywords": [
+        "telegram",
+        "bot",
+        "plugin",
+        "modular",
+        "productivity",
+        "delete",
+        "channel",
+        "administrators",
+        "messages"
+    ],
+    "repository": "https://github.com/Pgbgroup/referbot",
+    "website": "https://telegram.dog/SpEcHlDe",
+    "success_url": "https://t.me/SpEcHlDe/857",
+    "env": {
+           "Nothing": {
+            "description": "Type Nothing"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
