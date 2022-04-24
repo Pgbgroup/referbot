@@ -267,6 +267,13 @@ def send_text(message):
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
 
+  if message.text == "Admin":
+     if message.from_user.id in OWNER_ID:
+      but = InlineKeyboardMarkup([[InlineKeyboardButton("Users✅", callback_data="Users")], [InlineKeyboardButton("Broadcast 💯", callback_data="Broadcast")],[InlineKeyboardButton("AddUser", callback_data="New")], [InlineKeyboardButton("Check Users", callback_data="Check")]])
+      await app.send_message(chat_id=message.chat.id,text=f"**Hi** `{message.from_user.first_name}` **!\n\nWelcome to Admin Pannel of Pgbgroup Bot\n\nMade with ❤️ By @Pgbgroup**", reply_markup=but)
+   else:
+      await app.send_message(chat_id=message.chat.id,text="**You are not owner of Bot \n\nMade with ❤️ By @Pgbgroup**")
+      
 def trx_address(message):
    try:
     if message.text == "🚫 Cancel":
